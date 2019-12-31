@@ -9,6 +9,10 @@ sidebar: save_swan-getFileInfo
 
 **解释**：获取文件信息
 
+**百度APP中扫码体验：**
+
+<img src="https://b.bdstatic.com/miniapp/assets/images/doc_demo/fragment_getFileInfo.png"  class="demo-qrcode-image" />
+
 **方法参数**：Object object
 
 **`object`参数说明**：
@@ -28,9 +32,23 @@ sidebar: save_swan-getFileInfo
 |size  | Number | 文件大小，单位：B。|
 |digest  | String | 按照传入的 digestAlgorithm 计算得出的的文件摘要。|
 
-**代码示例**：
+**图片示例**
 
-**示例 1 获取临时文件信息**
+<div class="m-doc-custom-examples">
+    <div class="m-doc-custom-examples-correct">
+        <img src="https://b.bdstatic.com/miniapp/images/getFileInfo1.gif">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>     
+</div>
+
+**代码示例 1**：
+
+**获取临时文件信息**
 
 <a href="swanide://fragment/f71d02a0f25cf550584e34c6cc5d00b91573626558825" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
 
@@ -67,7 +85,22 @@ Page({
 })
 ```
 
-**示例 2 获取本地文件信息**
+**图片示例**
+
+<div class="m-doc-custom-examples">
+    <div class="m-doc-custom-examples-correct">
+        <img src="https://b.bdstatic.com/miniapp/images/getFileInfo2.gif">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>     
+</div>
+
+**代码示例 2**：
+**获取本地文件信息**
 
 <a href="swanide://fragment/a0491bc953bae3ceac257222d8f964621573626622598" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
 
@@ -98,6 +131,45 @@ Page({
                 })
             }
         });
+    }    
+})
+```
+
+**代码示例 3 - digestAlgorithm为sha1**：
+**获取本地文件信息**
+
+<a href="swanide://fragment/d730cd04b43766202854c776fa7ca2fb1575219277634" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
+
+```js
+Page({
+    data: { },
+    getFileInfo() {
+        swan.downloadFile({
+            header: {
+                'Cache-Control': 'no-cache'
+            },
+            url: 'https://smartprogram.baidu.com/docs/img/file-simple.pdf',
+            success: res => {
+                swan.getFileInfo({
+                    filePath: res.tempFilePath,
+                    digestAlgorithm: 'sha1',
+                    success: res => {
+                        console.log('getFileInfo success', res);
+                        swan.showModal({
+                            title: 'getFileInfo success',
+                            content: JSON.stringify(res)
+                        });
+                    },
+                    fail: err => {
+                        console.log('getFileInfo fail', err);
+                        swan.showModal({
+                            title: 'getFileInfo fail',
+                            content: JSON.stringify(err)
+                        });
+                    }
+                });
+            }
+        })
     }    
 })
 ```

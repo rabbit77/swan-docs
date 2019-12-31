@@ -9,6 +9,10 @@ sidebar: save_swan-getSavedFileList
 
 **解释**：获取本地已保存的文件列表
 
+**百度APP中扫码体验：**
+
+<img src="https://b.bdstatic.com/miniapp/assets/images/doc_demo/fragment_getSavedFileList.png"  class="demo-qrcode-image" />
+
 **方法参数**：Object object
 
 **`object`参数说明**：
@@ -33,9 +37,22 @@ sidebar: save_swan-getSavedFileList
 |createTime  |Number | 文件的保存时的时间戳，从1970/01/01 08:00:00 到当前时间的秒数。|
 |size  |Number | 文件大小，单位 B|
 
+**图片示例**
+
+<div class="m-doc-custom-examples">
+    <div class="m-doc-custom-examples-correct">
+        <img src="https://b.bdstatic.com/miniapp/images/getSavedFileList.gif">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>     
+</div>
 
 
-**代码示例**：
+**代码示例**
 
 <a href="swanide://fragment/f888ef3be2955b94548c5dcecf7c5b061573627301292" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
 

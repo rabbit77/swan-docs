@@ -11,6 +11,10 @@ sidebar:  save_swan-getStorageInfo
 
 **解释**：异步获取当前 storage 的相关信息。
 
+**百度APP中扫码体验：**
+
+<img src="https://b.bdstatic.com/miniapp/assets/images/doc_demo/fragment_getStorageInfo.png"  class="demo-qrcode-image" />
+
 **方法参数**：Object object
 
 **`object`参数说明**：
@@ -26,13 +30,27 @@ sidebar:  save_swan-getStorageInfo
 
 |参数 | 类型 | 说明|
 |---- | ---- | ---- |
-|keys  |  `Array.<string>` |   当前 storage 中所有的 key。|
+|keys  |  Array.&lt;string&gt; |   当前 storage 中所有的 key。|
 |currentSize | Number | 当前占用的空间大小, 单位 KB。|
 |limitSize |  Number |  限制的空间大小，单位 KB。|  
 
 
 
-**代码示例**：
+**图片示例**
+
+<div class="m-doc-custom-examples">
+    <div class="m-doc-custom-examples-correct">
+        <img src="https://b.bdstatic.com/miniapp/images/getStorageInfo.gif">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>     
+</div>
+
+**代码示例**
 
 <a href="swanide://fragment/eec686606577d1cd002b300acd3e88681573633461847" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
 

@@ -89,7 +89,7 @@ sidebar: appendix
 |参数名|类型|说明|是否必填|示例|
 |---|---|---|---|---|
 |author_name|	string|	作者名|否|	张三|
-|author_portrait_url|	string|作者头像url|否|`	http://www.xxx.baidu.com/author/portrail.jpg`|
+|author_portrait_url|	string|作者头像url|否|`	https://www.xxx.baidu.com/author/portrail.jpg`|
 |author_path|	string|	作者落地页链接|	否|/pages/author/author|
 |author_fans_num|	int	|作者粉丝量|否|10000|
 |author_auth|	string|	是否认证作者	|否|1-是 0-否 |
@@ -121,7 +121,7 @@ sidebar: appendix
 |参数名|类型|说明|是否必填|示例|
 |---|---|---|---|---|
 |author_name|	string|	作者名|	否|张三|
-|author_portrait_url	|string	|	作者头像url|否|	`http://www.xxx.baidu.com/author/portrail.jpg`|
+|author_portrait_url	|string	|	作者头像url|否|	`https://www.xxx.baidu.com/author/portrail.jpg`|
 |author_path|	string|	作者落地页链接|		否|/pages/author/author|
 |author_fans_num|	int	|作者粉丝量|	否|	1000|
 |author_publish_num|	int	|作者发文量|	否|1000|
@@ -132,7 +132,7 @@ sidebar: appendix
 |presenter|	string|	主持人|		否|何炅|
 |guest	|string	|嘉宾	|	否|谢娜|
 |publish_time	|string	|内容原始发布时间|是	|2018年9月8日|
-|video_duration	|string|	视频时长|	是|按照00:00:00格式填写|
+|video_duration	|string|	视频时长|	是|按照以下格式填写（超过一小时：61:20；分钟：01:20；秒：00:20）|
 |pc_url	|string	|视频PC播放链接	|是（和h5_url需填一种）| |
 |h5_url	|string	|视频H5播放链接|是（和pc_url需填一种）| |
 |update_time|	string|	更新时间|否|	2018年9月10日 15:36:20|
@@ -159,8 +159,8 @@ sidebar: appendix
 ```
 { 
  "publish_time":"2019年6月3日”, 
- "video_duration":"00:03:43",
- "pc_url":"http://v.youku.com/v_show/id_XNDIxNDI4NTE4OA==.html",
+ "video_duration":"03:43",
+ "pc_url":"https://v.youku.com/v_show/id_XNDIxNDI4NTE4OA==.html",
  "h5_url":"https://m.youku.com/video/id_XNDIxNDI4NTE4OA==.html"
 }
 ```

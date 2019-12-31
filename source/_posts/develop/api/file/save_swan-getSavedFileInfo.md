@@ -10,6 +10,10 @@ sidebar: save_swan-getSavedFileInfo
 
 **解释**：获取本地文件的文件信息。此接口只能用于获取已保存到本地的文件，若需要获取临时文件信息，请使用 getFileInfo 接口。
 
+**百度APP中扫码体验：**
+
+<img src="https://b.bdstatic.com/miniapp/assets/images/doc_demo/fragment_getSavedFileInfo.png"  class="demo-qrcode-image" />
+
 **方法参数**：Object object
 
 **`object`参数说明**：
@@ -28,7 +32,22 @@ sidebar: save_swan-getSavedFileInfo
 |size  |Number | 文件大小，单位B|
 |createTime  |Number | 文件保存时的时间戳，从1970/01/01 08:00:00 到该时刻的秒数。|
 
-**代码示例**：
+**图片示例**
+
+<div class="m-doc-custom-examples">
+    <div class="m-doc-custom-examples-correct">
+        <img src="https://b.bdstatic.com/miniapp/images/getSavedFileInfo.gif">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>     
+</div>
+
+
+**代码示例**
 
 <a href="swanide://fragment/492382b4ae79bea6296cf50bbe19a7031573644436590" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
 

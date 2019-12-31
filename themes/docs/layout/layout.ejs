@@ -85,7 +85,7 @@
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="小程序,小程序开发,小程序文档,智能小程序,智能小程序开发,百度小程序,百度智能小程序,<%= title %><%= keywords %>" />
     <meta name="description" content="<%= description %>" />
-    <title><% if (h1) { %><%= h1 %> - <% }%>智能小程序文档</title>
+    <title><% if (h1) { %><%= h1 %> - <% }%>百度智能小程序文档</title>
     <link rel="dns-prefetch" href="//smartprogram.baidu.com">
     <link rel="shortcut icon" href="https://www.baidu.com/favicon.ico" type="image/x-icon">
     <%- css('css/base') %>
@@ -104,9 +104,25 @@
             s.parentNode.insertBefore(hm, s);
         })();
     </script>
+    <script>
+        (function(){
+            var bp = document.createElement('script');
+            var curProtocol = window.location.protocol.split(':')[0];
+            if (curProtocol === 'https') {
+                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+            }
+            else {
+                bp.src = 'https://push.zhanzhang.baidu.com/push.js';
+            }
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(bp, s);
+        })();
+    </script>
 </head>
 <body>
- 
+    <script>
+        window.isSwanIde = window && window._swanIde;
+    </script>
     <%- partial('_partial/header', {navs: headerNavs, navIndex: headerNavIndex, h1: h1}) %>
     <%- partial('_partial/sidebar', {nav: nav}) %>
     <%- partial('_partial/article', {index: false, post: page, h1: h1, bottomPage: bottomPage, license: license}) %>

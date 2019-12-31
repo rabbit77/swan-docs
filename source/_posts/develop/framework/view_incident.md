@@ -58,7 +58,7 @@ Page({
 - bind 与 catch 的区别是 bind 事件绑定不会阻止冒泡事件向上冒泡，catch 事件绑定可以阻止冒泡事件向上冒泡；
 - value 对应的是在 Page 中定义同名的函数，否则在事件触发时执行函数会抛出异常。
 
-**示例代码**
+**代码示例**
 ```xml
 <view id="wrap" bindtap="handleTap1">
     wrap
@@ -81,7 +81,7 @@ Page({
 捕获阶段是位于冒泡阶段之前，在捕获阶段中，事件到达节点的顺序与冒泡阶段恰好相反。
 在捕获阶段监听的方式是采用`capture-bind`、`capture-catch`关键字，后者将中断捕获阶段和取消冒泡阶段。
 
-**示例代码**
+**代码示例**
 ```xml
 <view id="wrap" bind:touchstart="handleTap1" capture-bind:touchstart="handleTap2">
     wrap
@@ -113,7 +113,7 @@ Page({
 #### target
 
 |属性 | 类型  |  说明|
-|---- | ---- |
+|---- | ---- |---- |
 |id | String | 触发事件组件的 id|
 |tagName | String | 触发事件组件的类型|
 |dataset | Object | 触发事件组件上由data-开头的自定义属性组成的集合,详细属性参见 [dataset](./#dataset) |
@@ -121,7 +121,7 @@ Page({
 #### currentTarget
 
 |属性 | 类型  |  说明|
-|---- | ---- |
+|---- | ---- |---- |
 |id | String | 事件绑定的组件的 id|
 |tagName | String | 事件绑定的组件的类型|
 |dataset | Object | 事件绑定的组件上由data-开头的自定义属性组成的集合,详细属性参见 [dataset](./#dataset) |
@@ -136,7 +136,7 @@ Page({
 
 #### touch
 |属性 | 类型  |  说明|
-|---- | ---- |
+|---- | ---- |---- |
 |identifier | Number | 触摸点的标识符|
 |clientX, clientY  |  Number | 距离页面可显示区域（屏幕除去导航条）左上角的X轴与Y轴的距离|
 |pageX, pageY |   Number | 距离文档左上角的X轴与Y轴的距离|

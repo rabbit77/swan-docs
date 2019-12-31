@@ -29,27 +29,38 @@ sidebar: authorize_swan-authorize
 
 |scope|	对应接口|	描述|
 |---|---|---|
-|scope.userInfo|[swan.getUserInfo](http://smartprogram.baidu.com/docs/develop/api/open/userinfo_swan-getUserInfo/)|	用户信息|
-|scope.userLocation|[swan.getLocation](http://smartprogram.baidu.com/docs/develop/api/location/swan-getLocation/), [swan.chooseLocation](http://smartprogram.baidu.com/docs/develop/api/location/swan-chooseLocation/)|地理位置|
-|scope.writePhotosAlbum	|[swan.saveImageToPhotosAlbum](http://smartprogram.baidu.com/docs/develop/api/media_image/#swan-saveImageToPhotosAlbum/)|保存到相册|
-|scope.address|	[swan.chooseAddress](http://smartprogram.baidu.com/docs/develop/api/open/chooseaddress_swan-chooseAddress/)|	收货地址|
-|scope.invoiceTitle|[swan.chooseInvoiceTitle](http://smartprogram.baidu.com/docs/develop/api/open/swan-chooseInvoiceTitle/)	|发票抬头|
-|scope.record|	[swan.getRecorderManager](http://smartprogram.baidu.com/docs/develop/api/media/recorder_swan-getRecorderManager/)|	录音功能|
+|scope.userInfo|[swan.getUserInfo](https://smartprogram.baidu.com/docs/develop/api/open/userinfo_swan-getUserInfo/)|	用户信息|
+|scope.userLocation|[swan.getLocation](https://smartprogram.baidu.com/docs/develop/api/location/swan-getLocation/), [swan.chooseLocation](httpssss://smartprogram.baidu.com/docs/develop/api/location/swan-chooseLocation/)|地理位置|
+|scope.writePhotosAlbum	|[swan.saveImageToPhotosAlbum](https://smartprogram.baidu.com/docs/develop/api/media_image/#swan-saveImageToPhotosAlbum/)|保存到相册|
+|scope.address|	[swan.chooseAddress](https://smartprogram.baidu.com/docs/develop/api/open/chooseaddress_swan-chooseAddress/)|	收货地址|
+|scope.invoiceTitle|[swan.chooseInvoiceTitle](https://smartprogram.baidu.com/docs/develop/api/open/swan-chooseInvoiceTitle/)	|发票抬头|
+|scope.record|	[swan.getRecorderManager](https://smartprogram.baidu.com/docs/develop/api/media/recorder_swan-getRecorderManager/)|	录音功能|
 |scope.camera|	[camera](/develop/component/media_camera/)|	摄像头|
 
-**代码示例**：
-<a href="swanide://fragment/b823c7245fc5009c0be0a45a060cb2891569552275612" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
+**图片示例**
+
+<div class="m-doc-custom-examples">
+    <div class="m-doc-custom-examples-correct">
+        <img src="https://b.bdstatic.com/miniapp/images/authorize.gif">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>     
+</div>
+
+**代码示例**
+
+<a href="swanide://fragment/cb840e582c596d3af960596f7cd45fea1575143796711" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
 
 * 在 swan 文件中
 
 ```xml
 <view class="container">
-    <view class="page-body">
+    <view class="card-area">
         <button s-for="item in items" id="{{item.id}}" bind:tap="btnClick" type="primary" hover-stop-propagation="true">{{item.name}}</button>
-    </view>
-    <view class="page-title">
-        <view class="page-title-line"></view>
-        <view class="page-title-text">{{title}}</view>
     </view>
 </view>
 ```
@@ -65,11 +76,26 @@ Page({
         }, {
             name: '授权获取位置信息',
             id: 'scope.userLocation'
+        }, {
+            name: '授权保存到相册',
+            id: 'scope.writePhotosAlbum'
+        }, {
+            name: '授权获取收货地址',
+            id: 'scope.address'
+        }, {
+            name: '授权获取发票抬头',
+            id: 'scope.invoiceTitle'
+        }, {
+            name: '授权获取录音功能',
+            id: 'scope.record'
+        }, {
+            name: '授权使用摄像头',
+            id: 'scope.camera'
         }]
     },
-
     btnClick(e) {
         let scope = e.currentTarget.id;
+        console.log('scope', scope);
         swan.authorize({
             scope,
             success: res => {
@@ -78,6 +104,7 @@ Page({
                 });
             },
             fail: err => {
+                swan.openSetting({});
                 swan.showToast({
                     title: '授权失败'
                 });
@@ -109,6 +136,7 @@ Page({
 |10002|网络请求失败|
 |10004|用户拒绝(user not login)|
 
-**Bug & Tip**：
+**Bug & Tip**
 
-授权操作为异步操作，完成前请不要多次调用。
+tip：授权操作为异步操作，完成前请不要多次调用。
+

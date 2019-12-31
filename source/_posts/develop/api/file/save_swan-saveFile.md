@@ -13,7 +13,7 @@ sidebar: save_swan-saveFile
 
 **百度APP中扫码体验：**
 
-<img src="https://b.bdstatic.com/miniapp/assets/images/doc_demo/file.png"  class="demo-qrcode-image" />
+<img src="https://b.bdstatic.com/miniapp/assets/images/doc_demo/fragment_saveFile.png"  class="demo-qrcode-image" />
 
 
 **方法参数**：Object object
@@ -33,7 +33,22 @@ sidebar: save_swan-saveFile
 |---- | ---- | ---- |
 |savedFilePath  |String | 文件的保存路径|
 
-**代码示例**：
+**图片示例**
+
+<div class="m-doc-custom-examples">
+    <div class="m-doc-custom-examples-correct">
+        <img src="https://b.bdstatic.com/miniapp/images/saveFile.gif">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>     
+</div>
+
+**代码示例**
+
 <a href="swanide://fragment/08e654d3cd0a9812f5cb500d0be6d1b41573624533671" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
 
 * 在 js 文件中
@@ -95,6 +110,6 @@ Page({
 |2002|文件大小超过限制|
 |2003|IO异常|
 
-**Bug & Tip**：
+**Bug & Tip**
 
 本地文件存储的大小限制为 10M。

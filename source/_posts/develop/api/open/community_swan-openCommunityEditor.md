@@ -10,6 +10,11 @@ sidebar: community_swan-openCommunityEditor
 > 基础库 3.90.1 版本开始支持。以下版本请使用小程序发布器组件
 
 **解释**： 调起原生全屏内容发布器，并支持开发者配置发布器展示模块。
+
+**百度APP中扫码体验：**
+
+<img src="https://b.bdstatic.com/miniapp/assets/images/doc_demo/fragment_closeCommunityEditor.png"  class="demo-qrcode-image" />
+
 **方法参数**：Object object
 
 |属性名 |类型  |必填 | 默认值 |说明|
@@ -35,8 +40,8 @@ sidebar: community_swan-openCommunityEditor
 
 |参数名 |类型 | 说明|
 |---- | ---- | ---- |
-| tempFilePaths  | `Array.<string>` |图片的本地文件路径列表 。|
-| tempFiles  | ` Array.<object> ` |图片的本地文件列表，每一项是一个 File 对象。|
+| tempFilePaths  | Array.&lt;string&gt; |图片的本地文件路径列表 。|
+| tempFiles  | Array.&lt;object&gt; |图片的本地文件列表，每一项是一个 File 对象。|
 | title | String | 标题 |
 | content | String | 正文 |
 
@@ -79,54 +84,74 @@ imageConf: {
 
 
 
-**代码示例**：
+**图片示例**
+
+<div class="m-doc-custom-examples">
+    <div class="m-doc-custom-examples-correct">
+        <img src="https://b.bdstatic.com/miniapp/images/openCommunityEditor.gif">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>
+    <div class="m-doc-custom-examples-correct">
+        <img src=" ">
+    </div>     
+</div>
+
+**代码示例**
 
 <a href="swanide://fragment/35e77aafc2ff31ec9a169e4cda4657191574130936339" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
 
 ```js
-swan.openCommunityEditor({
-    contentPlaceholder: '请输入帖子正文',
-    titlePlaceholder: '请输入标题',
-    moduleList: ['title', 'image', 'emoji', 'target'],
-    imageConf: {
-        maxNum: 3,
-        ratio: 0.5
-    },
-    navBarTitleText: '发布器',
-    navBarTextStyle: 'white',
-    navBarBackgroundColor: '#ffffff',
-    confirmText: '发布',
-    confirmColor: '#3388ff',
-    cancelText: '取消',
-    cancelColor: '#3388ff',
-    targetText: '发布到 话题/吧/板块',
-    emojiPath: '../emojidata',
-    success: function (res) {
-        console.log('openCommunityEditor success', res);
-        // 将图片上传到服务器
-        //  swan.uploadFile({
-        //     url: 'https://smartprogram.baidu.com/xxx', // 仅为示例，并非真实的接口地址
-        //     filePath: res.tempFilePaths[0], // 要上传文件资源的路径
-        //     name: 'myfile',
-        //     success: function (res) {
-        //         console.log(res.statusCode);
-        //         // 上传成功关闭发布器
-        //         swan.closeCommunityEditor();
-        //     },
-        //     fail: function (err) {
-        //         console.log('错误码：' + err.errCode);
-        //         console.log('错误信息：' + err.errMsg);
-        //     }
-        // });
-        swan.closeCommunityEditor();
-    },
-    fail: function (err) {
-        console.log('openCommunityEditor fail', err);
-        swan.closeCommunityEditor();
-    },
-    complete: function (res) {
-        console.log('openCommunityEditor complete', res);
-    }
-});
+ openCommunityEditorAll() {
+    swan.openCommunityEditor({
+        contentPlaceholder: '请输入帖子正文',
+        titlePlaceholder: '请输入标题',
+        moduleList: ['title', 'image', 'emoji', 'target'],
+        imageConf: {
+            maxNum: 9,
+            ratio: 1
+        },
+        navBarTitleText: '发布帖子',
+        navBarTextStyle: 'black',
+        navBarBackgroundColor: '#ffffff',
+        confirmText: '发布',
+        confirmColor: '#3388ff',
+        cancelText: '取消',
+        cancelColor: '#666666',
+        targetText: '话题/吧/版块',
+        emojiPath: '../../emojidata',
+        success: function (res) {
+            console.log('openCommunityEditor success', res);
+            // 将图片上传到服务器
+            //  swan.uploadFile({
+            //     url: 'https://smartprogram.baidu.com/xxx', // 仅为示例，并非真实的接口地址
+            //     filePath: res.tempFilePaths[0], // 要上传文件资源的路径
+            //     name: 'myfile',
+            //     success: function (res) {
+            //         console.log(res.statusCode);
+            //         // 上传成功关闭发布器
+            //         swan.closeCommunityEditor();
+            //     },
+            //     fail: function (err) {
+            //         console.log('错误码：' + err.errCode);
+            //         console.log('错误信息：' + err.errMsg);
+            //     }
+            // });
+            swan.closeCommunityEditor();
+            swan.showToast({
+                title: '发布成功',
+                icon: 'none'
+            });
+        },
+        fail: function (err) {
+            console.log('openCommunityEditor fail', err);
+            swan.closeCommunityEditor();
+        },
+        complete: function (res) {
+            console.log('openCommunityEditor complete', res);
+        }
+    });
+}
 ```
 
