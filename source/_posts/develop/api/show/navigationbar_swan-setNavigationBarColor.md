@@ -5,12 +5,12 @@ nav: api
 sidebar: navigationbar_swan-setNavigationBarColor
 ---
 
- 
+
 **解释**：动态设置当前页面导航条的颜色。
 
 **百度APP中扫码体验：**
 
-<img src=" https://b.bdstatic.com/miniapp/assets/images/doc_demo/fragment_setNavigationBarColor.png"  class="demo-qrcode-image" />
+<img src=" https://b.bdstatic.com/miniapp/assets/images/doc_demo/setNavigationBarColor.png"  class="demo-qrcode-image" />
 
 **方法参数**： Object object
 
